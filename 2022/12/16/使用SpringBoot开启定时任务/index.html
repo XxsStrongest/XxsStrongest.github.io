@@ -4,8 +4,9 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="RabbitMq四大交换机, Ac">
-    <meta name="description" content="RabbitMq四大交换机类型1.Direct Exchange（直连交换机）​    直连交换机的特点一对一，消息队列通过routingKey与交换机进行绑定，相同的routingKey会获得相同的消息。一个队列可以通过多个不同的rout">
+    <meta name="keywords" content="使用SpringBoot开启定时任务, Ac">
+    <meta name="description" content="Spring Task执行① 开启定时任务开启定时任务只需要在 Spring Boot 的启动类上声明 @EnableScheduling 即可，实现代码如下：
+12345@SpringBootApplication@EnableSched">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -17,7 +18,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>RabbitMq四大交换机 | Ac</title>
+    <title>使用SpringBoot开启定时任务 | Ac</title>
     <link rel="icon" type="image/png" href="/favicon.png">
     
 
@@ -332,12 +333,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/18.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/17.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">RabbitMq四大交换机</h1>
+                    <h1 class="description center-align post-title">使用SpringBoot开启定时任务</h1>
                 </div>
             </div>
         </div>
@@ -359,13 +360,9 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                    <div class="article-tag">
-                        
-                            <a href="/tags/RabbitMq/">
-                                <span class="chip bg-color">RabbitMq</span>
-                            </a>
-                        
-                    </div>
+                          <div class="article-tag">
+                            <span class="chip bg-color">无标签</span>
+                          </div>
                     
                 </div>
                 <div class="col s5 right-align">
@@ -377,7 +374,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2022-11-22
+                    2022-12-16
                 </div>
                 
 
@@ -398,16 +395,23 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="RabbitMq四大交换机类型"><a href="#RabbitMq四大交换机类型" class="headerlink" title="RabbitMq四大交换机类型"></a>RabbitMq四大交换机类型</h1><h2 id="1-Direct-Exchange（直连交换机）"><a href="#1-Direct-Exchange（直连交换机）" class="headerlink" title="1.Direct Exchange（直连交换机）"></a>1.Direct Exchange（直连交换机）</h2><p>​    直连交换机的特点<strong>一对一</strong>，消息队列通过routingKey与交换机进行绑定，相同的routingKey会获得相同的消息。一个队列可以通过多个不同的routingKey与交换机进行绑定。不同的队列也可以通过相同的routingKey绑定交换机。</p>
-<h2 id="2-Fanout-Exchange（扇出交换机）"><a href="#2-Fanout-Exchange（扇出交换机）" class="headerlink" title="2.Fanout Exchange（扇出交换机）"></a>2.Fanout Exchange（扇出交换机）</h2><p>扇出交换机类似于<strong>广播</strong>，只要队列与该交换机绑定，所有发送到该交换机的信息都会被转发到所有与之绑定的队列，与routingKey无关。</p>
-<h2 id="3-Topic-Exchange（主题交换机）"><a href="#3-Topic-Exchange（主题交换机）" class="headerlink" title="3.Topic Exchange（主题交换机）"></a>3.Topic Exchange（主题交换机）</h2><p>一个队列可以通过多个主题与交换机绑定，多个消息队列也可以通过相同消息主题和交换机绑定。并且可以通过通配符（或者#）进行多个消息主题的适配。</p>
-<p>消息主题的一般格式为xxx.xxx.xxx（x为英文字母，每个单词用英文句号隔开），通配符可以适配一个单词，#可以适配零个或者多个单词。</p>
-<p><em><strong>#匹配0个或多个单词，*匹配单个单词。</strong></em></p>
-<h2 id="4-Header-Exchenge（头交换机）"><a href="#4-Header-Exchenge（头交换机）" class="headerlink" title="4.Header Exchenge（头交换机）"></a>4.Header Exchenge（头交换机）</h2><p>与routingKey无关，匹配机制是<strong>匹配消息头中的属性信息</strong>。在绑定消息队列与交换机之前声明一个map键值对，通过这个map对象实现消息队列和交换机的绑定。当消息发送到RabbitMQ时会取到该消息的headers与Exchange绑定时指定的键值对进行匹配；如果完全匹配则消息会路由到该队列，否则不会路由到该队列。</p>
-<p>匹配规则x-match有下列两种类型：</p>
-<p>x-match = all ：表示所有的键值对都匹配才能接受到消息</p>
-<p>x-match = any ：表示只要有键值对匹配就能接受到消息</p>
-<p><strong>Topic Exchange应用范围最广！</strong></p>
+                <h2 id="Spring-Task执行"><a href="#Spring-Task执行" class="headerlink" title="Spring Task执行"></a><strong>Spring Task执行</strong></h2><h3 id="①-开启定时任务"><a href="#①-开启定时任务" class="headerlink" title="① 开启定时任务"></a><strong>① 开启定时任务</strong></h3><p>开启定时任务只需要在 Spring Boot 的启动类上声明 <code>@EnableScheduling</code> 即可，实现代码如下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@SpringBootApplication</span></span><br><span class="line"><span class="meta">@EnableScheduling</span> <span class="comment">// 开启定时任务</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">DemoApplication</span> &#123;</span><br><span class="line">    <span class="comment">// do someing</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="②-添加定时任务"><a href="#②-添加定时任务" class="headerlink" title="② 添加定时任务"></a><strong>② 添加定时任务</strong></h3><p>定时任务的添加只需要使用 <code>@Scheduled</code> 注解标注即可，如果有多个定时任务可以创建多个 <code>@Scheduled</code> 注解标注的方法，示例代码如下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> org.springframework.scheduling.annotation.Scheduled;</span><br><span class="line"><span class="keyword">import</span> org.springframework.stereotype.Component;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Component</span> <span class="comment">// 把此类托管给 Spring，不能省略</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">TaskUtils</span> &#123;</span><br><span class="line">    <span class="comment">// 添加定时任务</span></span><br><span class="line">    <span class="meta">@Scheduled(cron = &quot;59 59 23 0 0 5&quot;)</span> <span class="comment">// cron 表达式，每周五 23:59:59 执行</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">doTask</span><span class="params">()</span>&#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;我是定时任务~&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>注意：定时任务是自动触发的无需手动干预，也就是说 Spring Boot 启动后会自动加载并执行定时任务。</p>
+<p>Spring Task 的实现需要使用 cron 表达式来声明执行的频率和规则，具体可百度。</p>
+<h2 id="知识扩展：分布式定时任务"><a href="#知识扩展：分布式定时任务" class="headerlink" title="知识扩展：分布式定时任务"></a><strong>知识扩展：分布式定时任务</strong></h2><p><strong>上面的方法都是关于单机定时任务的实现，如果是分布式环境可以使用</strong> <a target="_blank" rel="noopener" href="https://cloud.tencent.com/product/crs?from=10680"><strong>Redis</strong></a> <strong>来实现定时任务。</strong></p>
+<p>使用 Redis 实现延迟任务的方法大体可分为两类：通过 ZSet 的方式和键空间通知的方式。</p>
+<h3 id="①-ZSet-实现方式"><a href="#①-ZSet-实现方式" class="headerlink" title="① ZSet 实现方式"></a><strong>① ZSet 实现方式</strong></h3><p>通过 ZSet 实现定时任务的思路是，将定时任务存放到 ZSet 集合中，并且将过期时间存储到 ZSet 的 Score 字段中，然后通过一个无线循环来判断当前时间内是否有需要执行的定时任务，如果有则进行执行，具体实现代码如下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> redis.clients.jedis.Jedis;</span><br><span class="line"><span class="keyword">import</span> utils.JedisUtils;</span><br><span class="line"><span class="keyword">import</span> java.time.Instant;</span><br><span class="line"><span class="keyword">import</span> java.util.Set;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">DelayQueueExample</span> &#123;</span><br><span class="line">    <span class="comment">// zset key</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="type">String</span> <span class="variable">_KEY</span> <span class="operator">=</span> <span class="string">&quot;myTaskQueue&quot;</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> InterruptedException &#123;</span><br><span class="line">        <span class="type">Jedis</span> <span class="variable">jedis</span> <span class="operator">=</span> JedisUtils.getJedis();</span><br><span class="line">        <span class="comment">// 30s 后执行</span></span><br><span class="line">        <span class="type">long</span> <span class="variable">delayTime</span> <span class="operator">=</span> Instant.now().plusSeconds(<span class="number">30</span>).getEpochSecond();</span><br><span class="line">        jedis.zadd(_KEY, delayTime, <span class="string">&quot;order_1&quot;</span>);</span><br><span class="line">        <span class="comment">// 继续添加测试数据</span></span><br><span class="line">        jedis.zadd(_KEY, Instant.now().plusSeconds(<span class="number">2</span>).getEpochSecond(), <span class="string">&quot;order_2&quot;</span>);</span><br><span class="line">        jedis.zadd(_KEY, Instant.now().plusSeconds(<span class="number">2</span>).getEpochSecond(), <span class="string">&quot;order_3&quot;</span>);</span><br><span class="line">        jedis.zadd(_KEY, Instant.now().plusSeconds(<span class="number">7</span>).getEpochSecond(), <span class="string">&quot;order_4&quot;</span>);</span><br><span class="line">        jedis.zadd(_KEY, Instant.now().plusSeconds(<span class="number">10</span>).getEpochSecond(), <span class="string">&quot;order_5&quot;</span>);</span><br><span class="line">        <span class="comment">// 开启定时任务队列</span></span><br><span class="line">        doDelayQueue(jedis);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 定时任务队列消费</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> jedis Redis 客户端</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">doDelayQueue</span><span class="params">(Jedis jedis)</span> <span class="keyword">throws</span> InterruptedException &#123;</span><br><span class="line">        <span class="keyword">while</span> (<span class="literal">true</span>) &#123;</span><br><span class="line">            <span class="comment">// 当前时间</span></span><br><span class="line">            <span class="type">Instant</span> <span class="variable">nowInstant</span> <span class="operator">=</span> Instant.now();</span><br><span class="line">            <span class="type">long</span> <span class="variable">lastSecond</span> <span class="operator">=</span> nowInstant.plusSeconds(-<span class="number">1</span>).getEpochSecond(); <span class="comment">// 上一秒时间</span></span><br><span class="line">            <span class="type">long</span> <span class="variable">nowSecond</span> <span class="operator">=</span> nowInstant.getEpochSecond();</span><br><span class="line">            <span class="comment">// 查询当前时间的所有任务</span></span><br><span class="line">            Set&lt;String&gt; data = jedis.zrangeByScore(_KEY, lastSecond, nowSecond);</span><br><span class="line">            <span class="keyword">for</span> (String item : data) &#123;</span><br><span class="line">                <span class="comment">// 消费任务</span></span><br><span class="line">                System.out.println(<span class="string">&quot;消费：&quot;</span> + item);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="comment">// 删除已经执行的任务</span></span><br><span class="line">            jedis.zremrangeByScore(_KEY, lastSecond, nowSecond);</span><br><span class="line">            Thread.sleep(<span class="number">1000</span>); <span class="comment">// 每秒查询一次</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="②-键空间通知"><a href="#②-键空间通知" class="headerlink" title="② 键空间通知"></a><strong>② 键空间通知</strong></h3><p>我们可以通过 Redis 的键空间通知来实现定时任务，它的实现思路是给所有的定时任务设置一个过期时间，等到了过期之后，我们通过订阅过期消息就能感知到定时任务需要被执行了，此时我们执行定时任务即可。</p>
+<p>默认情况下 Redis 是不开启键空间通知的，需要我们通过 <code>config set notify-keyspace-events Ex</code> 的命令手动开启，开启之后定时任务的代码如下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> redis.clients.jedis.Jedis;</span><br><span class="line"><span class="keyword">import</span> redis.clients.jedis.JedisPubSub;</span><br><span class="line"><span class="keyword">import</span> utils.JedisUtils;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">TaskExample</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="type">String</span> <span class="variable">_TOPIC</span> <span class="operator">=</span> <span class="string">&quot;__keyevent@0__:expired&quot;</span>; <span class="comment">// 订阅频道名称</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="type">Jedis</span> <span class="variable">jedis</span> <span class="operator">=</span> JedisUtils.getJedis();</span><br><span class="line">        <span class="comment">// 执行定时任务</span></span><br><span class="line">        doTask(jedis);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 订阅过期消息，执行定时任务</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> jedis Redis 客户端</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">doTask</span><span class="params">(Jedis jedis)</span> &#123;</span><br><span class="line">        <span class="comment">// 订阅过期消息</span></span><br><span class="line">        jedis.psubscribe(<span class="keyword">new</span> <span class="title class_">JedisPubSub</span>() &#123;</span><br><span class="line">            <span class="meta">@Override</span></span><br><span class="line">            <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">onPMessage</span><span class="params">(String pattern, String channel, String message)</span> &#123;</span><br><span class="line">                <span class="comment">// 接收到消息，执行定时任务</span></span><br><span class="line">                System.out.println(<span class="string">&quot;收到消息：&quot;</span> + message);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;, _TOPIC);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 
                 
             </div>
@@ -434,7 +438,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://example.com/2022/11/22/RabbitMq%E5%9B%9B%E5%A4%A7%E4%BA%A4%E6%8D%A2%E6%9C%BA/">http://example.com/2022/11/22/RabbitMq%E5%9B%9B%E5%A4%A7%E4%BA%A4%E6%8D%A2%E6%9C%BA/</a>
+                    <a href="http://example.com/2022/12/16/%E4%BD%BF%E7%94%A8SpringBoot%E5%BC%80%E5%90%AF%E5%AE%9A%E6%97%B6%E4%BB%BB%E5%8A%A1/">http://example.com/2022/12/16/%E4%BD%BF%E7%94%A8SpringBoot%E5%BC%80%E5%90%AF%E5%AE%9A%E6%97%B6%E4%BB%BB%E5%8A%A1/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -471,11 +475,7 @@
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            
-                                <a href="/tags/RabbitMq/">
-                                    <span class="chip bg-color">RabbitMq</span>
-                                </a>
-                            
+                            <span class="chip bg-color">无标签</span>
                         </div>
                     
                 </div>
@@ -519,66 +519,18 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2022/11/22/SpringBoot%E4%BD%BF%E7%94%A8RabbitMq/">
+                <a href="/2022/12/16/%E4%BD%BF%E7%94%A8SpringBoot%E5%BC%80%E5%90%AF%E5%AE%9A%E6%97%B6%E4%BB%BB%E5%8A%A1/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="Springboot使用RabbitMq">
+                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="使用SpringBoot开启定时任务">
                         
-                        <span class="card-title">Springboot使用RabbitMq</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            
-                        
-                    </div>
-                    <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2022-11-22
-                        </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/%E6%8A%80%E6%9C%AF/" class="post-category">
-                                    技术
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/rabbitmq/">
-                        <span class="chip bg-color">rabbitmq</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/2022/11/10/C++%E5%B8%B8%E8%A7%81%E4%B8%89%E7%A7%8D%E5%93%88%E5%B8%8C%E7%BB%93%E6%9E%84/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="C++常见三种哈希结构">
-                        
-                        <span class="card-title">C++常见三种哈希结构</span>
+                        <span class="card-title">使用SpringBoot开启定时任务</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -589,7 +541,45 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-11-10
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-12-16
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-user fa-fw"></i>
+                            Ac
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2022/11/26/String%E3%80%81StringBuilder%E3%80%81StringBuffer%E5%BC%82%E5%90%8C/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="String、StringBuilder、StringBuffer异同">
+                        
+                        <span class="card-title">String、StringBuilder、StringBuffer异同</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-11-26
                             </span>
                         <span class="publish-author">
                             
@@ -602,8 +592,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/C/">
-                        <span class="chip bg-color">C++</span>
+                    <a href="/tags/java/">
+                        <span class="chip bg-color">java</span>
                     </a>
                     
                 </div>
